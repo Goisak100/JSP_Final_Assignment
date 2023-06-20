@@ -14,7 +14,7 @@ public class 파일업로드관련코드 {
     public ResponseEntity<String> findFile(@RequestParam("fileName") String fileName) {
 
         // 여기에서 DB가 조회한 url을 바로 반환한다.
-        return ResponseEntity.ok("http://localhost:8080/resources/" + fileName + ".jpg");
+        return ResponseEntity.ok("http://158.247.246.106:8080/resources/" + fileName + ".jpg");
     }
 }
 

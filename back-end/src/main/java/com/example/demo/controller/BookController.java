@@ -66,7 +66,7 @@ public class BookController {
             ex.printStackTrace();
         }
 
-        imageUrl = "http://localhost:8080/resources/" + imageUrl;
+        imageUrl = "http://158.247.246.106:8080/resources/" + imageUrl;
         Book book = new Book(0, name, author, translator, publisher, publicationDate, price, imageUrl, introduce);
         bookService.addBook(book);
     }
@@ -108,7 +108,7 @@ public class BookController {
         if (!tokenService.validateToken(token)) {
             return;
         }
-        imageUrl = "http://localhost:8080/resources/" + imageUrl;
+        imageUrl = "http://158.247.246.106:8080/resources/" + imageUrl;
         Book book = new Book(id, name, author, translator, publisher, publicationDate, price, imageUrl, introduce);
         bookService.updateBookDetail(book);
 
