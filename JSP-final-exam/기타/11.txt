@@ -1,0 +1,47 @@
+select t.order_id, t.name, t.user_id, t.total_price, t.total_quantity, t.rn
+from (
+  select od.order_id, b.name, od.user_id, 
+    sum(b.price * od.quantity) as total_price, 
+    sum(od.quantity) as total_quantity,
+    row_number() over (partition by od.order_id order by sum(b.price) desc) as rn
+  from orders_detail as od
+  inner join books as b on b.id = od.book_id 
+  where od.user_id = 'isakgo' 
+  group by od.order_id, b.name, od.user_id
+) as t
+where t.rn = 1;
+
+
+
+
+
+
+
+
+create table orders (
+  id int auto_increment not null primary key,
+  user_id varchar(50) not null,
+  address varchar(300) not null,
+  address_detail varchar(100),
+  phone_number varchar(20),
+  foreign key (user_id) references users(id)
+);
+
+create table orders_detail (
+  order_id int not null,
+  user_id varchar(50) not null,
+  book_id int not null,
+  quantity int not null,
+  primary key (order_id, user_id, book_id),
+  foreign key (order_id) references orders(id),
+  foreign key (user_id) references users(id),
+  foreign key (book_id) references books(id)
+);
+
+insert into orders (user_id, address, address_detail, phone_number) values ('isakgo', '명주 5길 13-8', '단독 주택', '01044770747');
+
+insert into orders_detail values (1, 'isakgo', 1, 2);
+insert into orders_detail values (1, 'isakgo', 2, 3);
+insert into orders_detail values (1, 'isakgo', 3, 3);
+
+select * from orders_detail were order_id = 1;
