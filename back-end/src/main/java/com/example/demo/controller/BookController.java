@@ -59,7 +59,7 @@ public class BookController {
         }
 
         try {
-            Path path = Paths.get("C:\\Users\\user\\Desktop\\JSP-final-exam\\back_spring\\demo\\src\\main\\resources\\static\\images/", imageUrl);
+            Path path = Paths.get("demo\\src\\main\\resources\\static\\images/", imageUrl);
             Files.write(path, image.getBytes());
             Thread.sleep(500);
         } catch (Exception ex) {
