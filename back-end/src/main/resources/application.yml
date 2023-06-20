@@ -2,7 +2,7 @@ spring:
     datasource:
         url: jdbc:mysql://localhost:3306/jsp_final_assignment
         username: root
-        password: 1234
+        password: Wktks300djr@@ 
         driver-class-name: com.mysql.cj.jdbc.Driver
     mvc:
       static-path-pattern: /resources/**
