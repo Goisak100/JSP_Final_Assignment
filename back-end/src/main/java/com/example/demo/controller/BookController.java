@@ -59,7 +59,7 @@ public class BookController {
         }
 
         try {
-            Path path = Paths.get("demo/src/main/resources/static/images/", imageUrl);
+            Path path = Paths.get("/var/www/myapp/images/", imageUrl);
             Files.write(path, image.getBytes());
             Thread.sleep(500);
         } catch (Exception ex) {
@@ -84,7 +84,7 @@ public class BookController {
         String imageUrl = bookService.getImageUrlById(book_id);
         bookService.removeBook(book_id);
 
-        File file = new File("demo/src/main/resources/static/images/" + 
+        File file = new File("/var/www/myapp/images" + 
             imageUrl.substring(imageUrl.lastIndexOf("/")));
         file.delete();
     }
@@ -114,7 +114,7 @@ public class BookController {
 
         if (!oldImageUrl.equals(imageUrl)) {
              try {
-                File file = new File("demo/src/main/resources/static/images/" + 
+                File file = new File("/var/www/myapp/images/" + 
                     oldImageUrl.substring(oldImageUrl.lastIndexOf("/")));
                 if(file.exists()) {
                     if(file.delete()) {
@@ -125,7 +125,7 @@ public class BookController {
                 } else {
                     System.out.println("파일이 존재하지 않습니다.");
                 }
-                Path path = Paths.get("demo/src/main/resources/static/images/" +
+                Path path = Paths.get("/var/www/myapp/images/" +
                     imageUrl.substring(imageUrl.lastIndexOf("/")));
                 Files.write(path, image.getBytes());
                 Thread.sleep(500);

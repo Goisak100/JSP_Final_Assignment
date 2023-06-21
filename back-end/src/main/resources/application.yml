@@ -8,8 +8,7 @@ spring:
       static-path-pattern: /resources/**
     web:
       resources:
-        static-locations: classpath:/static/images/
-
+        static-locations: file:/var/www/myapp/images/
 security:
   jwt:
     secretKey: wcL9j01ir23NgiffvYLo2cwtHR7auPW0OGK02C6RlbQ=
