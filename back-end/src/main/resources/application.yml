@@ -12,3 +12,11 @@ spring:
 security:
   jwt:
     secretKey: wcL9j01ir23NgiffvYLo2cwtHR7auPW0OGK02C6RlbQ=
+
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.12
+    key-store-password: Wktks300djr@@
+    keyStoreType: PKCS12
+    keyAlias: Wktks300djr@@
