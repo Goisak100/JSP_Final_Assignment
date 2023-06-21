@@ -63,7 +63,7 @@ export default function AddProduct() {
             formData.append("imageUrl", imageUrl);
             formData.append("introduce", introduce);
     
-            await axios.post("http://158.247.246.106:8080/api/book/addBook", formData, {
+            await axios.post("https://158.247.246.106:8080/api/book/addBook", formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     'Content-Type': 'multipart/form-data',

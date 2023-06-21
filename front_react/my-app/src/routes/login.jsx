@@ -41,7 +41,7 @@ export default function Login() {
         }
 
         try {
-            const response = await axios.post("http://158.247.246.106:8080/api/processLogin", body);
+            const response = await axios.post("https://158.247.246.106:8080/api/processLogin", body);
             const jsonObject = response.data;
             const token = jsonObject.token;
             const role = jsonObject.role;

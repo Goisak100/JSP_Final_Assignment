@@ -27,7 +27,7 @@ export default function Register() {
         }
 
         try {
-            await axios.post("http://158.247.246.106:8080/api/processRegister", body);
+            await axios.post("https://158.247.246.106:8080/api/processRegister", body);
             window.location.href ="/RootLogin/Login";
             console.log("회원가입이 완려되었습니다.");
         } catch (error) {

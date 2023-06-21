@@ -21,7 +21,7 @@ export default function OrderDetail() {
 
         const fetchOrderDetails = async() => {
             try {
-                const response = await axios.post("http://158.247.246.106:8080/api/getOrderDetails", null, config)
+                const response = await axios.post("https://158.247.246.106:8080/api/getOrderDetails", null, config)
                 setOrderDetails(response.data);
                 return response;
             } catch(error) {
@@ -31,7 +31,7 @@ export default function OrderDetail() {
 
         const fetchUserInformations = async() => {
             try {
-                const response = await axios.post("http://158.247.246.106:8080/api/getUserInformationByOrderId", null, config)
+                const response = await axios.post("https://158.247.246.106:8080/api/getUserInformationByOrderId", null, config)
                 setUserInformations(response.data);
                 return response;
             } catch(error) {

@@ -67,7 +67,7 @@ export default function UpdateProduct() {
 
     const fetchBookDetailData = async() => {
         try {
-            const response = await axios.get("http://158.247.246.106:8080/api/book/getBookDetail", {
+            const response = await axios.get("https://158.247.246.106:8080/api/book/getBookDetail", {
                 params: {
                     id: book_id,
                 }
@@ -117,7 +117,7 @@ export default function UpdateProduct() {
         formData.append("oldImageUrl", oldImageUrl);
 
         try {
-            await axios.post("http://158.247.246.106:8080/api/book/updateBookDetail", formData, {
+            await axios.post("https://158.247.246.106:8080/api/book/updateBookDetail", formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     'Content-Type': 'multipart/form-data',
