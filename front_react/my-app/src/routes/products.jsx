@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 export const loader = async () => {
     try {
-        const response = await axios.get("https://158.247.246.106:8080/api/book/getBook");
+        const response = await axios.get("https://158.247.246.106:8443/api/book/getBook");
         return response.data;
     } catch (error) {
         console.log(error);

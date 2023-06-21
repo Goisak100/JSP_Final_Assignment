@@ -62,7 +62,7 @@ export default function ShoppingCart() {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await axios.get("https://158.247.246.106:8080/api/findCartDetailById", {
+                const response = await axios.get("https://158.247.246.106:8443/api/findCartDetailById", {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }
@@ -77,7 +77,7 @@ export default function ShoppingCart() {
 
         const fetchTotalPrice = async() => {
             try {
-                const response = await axios.post("https://158.247.246.106:8080/api/totalPrice", null, {
+                const response = await axios.post("https://158.247.246.106:8443/api/totalPrice", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }
@@ -91,7 +91,7 @@ export default function ShoppingCart() {
 
         const fetchUserInformationData = async() => {
             try {
-                const response = await axios.post("https://158.247.246.106:8080/api/findUserInformationById", null, {
+                const response = await axios.post("https://158.247.246.106:8443/api/findUserInformationById", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }

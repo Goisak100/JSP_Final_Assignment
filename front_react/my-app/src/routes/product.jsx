@@ -36,7 +36,7 @@ export default function Product({ book }) {
     }
 
     try {
-      await axios.post("https://158.247.246.106:8080/api/addBookToCart", null, {
+      await axios.post("https://158.247.246.106:8443/api/addBookToCart", null, {
         params: {
           book_id: id,
           quantity: 1,
@@ -59,7 +59,7 @@ export default function Product({ book }) {
 
   const handleRemoveBook = async () => {
     try {
-        await axios.post("https://158.247.246.106:8080/api/book/removeBook", null, {
+        await axios.post("https://158.247.246.106:8443/api/book/removeBook", null, {
           params: {
             book_id: id,
           },
