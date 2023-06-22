@@ -67,7 +67,7 @@ export default function UpdateProduct() {
 
     const fetchBookDetailData = async() => {
         try {
-            const response = await axios.get("https://isakgo.com/api/book/getBookDetail", {
+            const response = await axios.get("https://isakgo.com:8443/api/book/getBookDetail", {
                 params: {
                     id: book_id,
                 }
@@ -117,7 +117,7 @@ export default function UpdateProduct() {
         formData.append("oldImageUrl", oldImageUrl);
 
         try {
-            await axios.post("https://isakgo.com/api/book/updateBookDetail", formData, {
+            await axios.post("https://isakgo.com:8443/api/book/updateBookDetail", formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     'Content-Type': 'multipart/form-data',

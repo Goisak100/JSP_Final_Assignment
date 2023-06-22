@@ -14,7 +14,7 @@ public class 파일업로드관련코드 {
     public ResponseEntity<String> findFile(@RequestParam("fileName") String fileName) {
 
         // 여기에서 DB가 조회한 url을 바로 반환한다.
-        return ResponseEntity.ok("https://isakgo.com/resources/" + fileName + ".jpg");
+        return ResponseEntity.ok("https://isakgo.com:8443/resources/" + fileName + ".jpg");
     }
 }
 

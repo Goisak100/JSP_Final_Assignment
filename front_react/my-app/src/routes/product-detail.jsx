@@ -30,7 +30,7 @@ const StyledCardMediaContainer = styled('div')({
 
 export const loader = async ({params}) => {
   try {
-    const response = await axios.get("https://isakgo.com/api/book/getBookDetail", {
+    const response = await axios.get("https://isakgo.com:8443/api/book/getBookDetail", {
       params: {
         id: params.id
       }
@@ -50,7 +50,7 @@ export default function ProductDetail() {
 
   const handleRemoveBook = async () => {
     try {
-        await axios.post("https://isakgo.com/api/book/removeBook", null, {
+        await axios.post("https://isakgo.com:8443/api/book/removeBook", null, {
           params: {
             book_id: id,
           },
@@ -80,7 +80,7 @@ export default function ProductDetail() {
     }
 
     try {
-      await axios.post("https://isakgo.com/api/addBookToCart", null, {
+      await axios.post("https://isakgo.com:8443/api/addBookToCart", null, {
         params: {
           book_id: id,
           quantity: 1,

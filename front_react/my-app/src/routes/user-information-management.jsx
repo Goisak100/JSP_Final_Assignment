@@ -59,7 +59,7 @@ export default function UserInformationManagement() {
         event.preventDefault();
 
         try {
-            await axios.post("https://isakgo.com/api/updateUserInformationById", null, {
+            await axios.post("https://isakgo.com:8443/api/updateUserInformationById", null, {
                 params: {
                     address: address,
                     addressDetail: addressDetail,
@@ -78,7 +78,7 @@ export default function UserInformationManagement() {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await axios.post("https://isakgo.com/api/findUserInformationById", null, {
+                const response = await axios.post("https://isakgo.com:8443/api/findUserInformationById", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }
