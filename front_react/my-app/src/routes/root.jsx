@@ -19,7 +19,7 @@ export default function Root() {
         <div>
             {/* { token ? <HeaderLogin /> : <Header />} */}
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }
