@@ -17,9 +17,9 @@ export default function Root() {
 
     return (
         <div>
-            { token ? <HeaderLogin /> : <Header />}
+            {/* { token ? <HeaderLogin /> : <Header />} */}
             <Outlet />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
