@@ -72,13 +72,13 @@ export default function TestLogin() {
         <div>
             <div>
                 <button onClick={handleAdminLogin}>Click this button...</button>
-                {/* <button onClick={handleUserLogin}>유저 로그인하기</button>
-                <button onClick={handleLogout}>로그아웃하기</button> */}
+                <button onClick={handleUserLogin}>유저 로그인하기</button>
+                <button onClick={handleLogout}>로그아웃하기</button>
             </div>
-            {/* <div>
+            <div>
                 <p>토큰: {token}</p>
                 <p>역할: {role}</p>
-            </div> */}
+            </div>
         </div>
     )
 }
