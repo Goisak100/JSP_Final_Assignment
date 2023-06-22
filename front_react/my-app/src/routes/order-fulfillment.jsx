@@ -10,7 +10,7 @@ export default function OrderFulfillment() {
     useEffect(() => {
         const order = async () => {
             try {
-                axios.post("https://158.247.246.106:8443/api/order", null, {
+                axios.post("https://isakgo.com/api/order", null, {
                     params: {
                         address: data.address,
                         addressDetail: data.addressDetail,

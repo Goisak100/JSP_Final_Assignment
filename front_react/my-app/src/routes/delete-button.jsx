@@ -6,7 +6,7 @@ export default function DeleteButton({item_id}) {
     const sendQuery = async () => {
         
         try {
-            await axios.post("https://158.247.246.106:8443/api/deleteCartById", null, {
+            await axios.post("https://isakgo.com/api/deleteCartById", null, {
                 params: {
                     item_id: item_id,
                 },

@@ -25,7 +25,7 @@ export default function TestLogin() {
         }
 
         try {
-            const response = await axios.post("https://158.247.246.106:8443/api/processLogin", body);
+            const response = await axios.post("https://isakgo.com/api/processLogin", body);
             const jsonObject = response.data;
             const token = jsonObject.token;
             const role = jsonObject.role;
@@ -46,7 +46,7 @@ export default function TestLogin() {
         }
 
         try {
-            const response = await axios.post("https://158.247.246.106:8443/api/processLogin", body);
+            const response = await axios.post("https://isakgo.com/api/processLogin", body);
             const jsonObject = response.data;
             const token = jsonObject.token;
             const role = jsonObject.role;
