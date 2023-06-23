@@ -89,7 +89,6 @@ export default function Register() {
                         value={id}
                         onChange={handleChangeId}
                     />
-                    <Button onClick={handleIsIdExists}>아이디 중복 확인</Button>
                     <TextField
                         variant="outlined"
                         margin="normal"
@@ -103,6 +102,15 @@ export default function Register() {
                         value={password}
                         onChange={handleChangePassword}
                     />
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                        onClick={handleIsIdExists}
+                    >
+                        아이디 중복 확인
+                    </Button>
                     <Button
                         type="submit"
                         fullWidth
