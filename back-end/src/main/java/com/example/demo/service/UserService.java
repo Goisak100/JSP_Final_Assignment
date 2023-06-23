@@ -29,6 +29,9 @@ public class UserService {
             throw new NullPointerException("findUser variable value is null");
         }
 
+        System.out.println("찾은 유저 아이디: " + findUser.getId());
+        System.out.println("찾은 유저 비번: " + findUser.getPassword());
+
         Argon2PasswordEncoder argon2PasswordEncoder = new Argon2PasswordEncoder(
             passwordConfig.getSaltLength(),
             passwordConfig.getHashLength(),
@@ -38,6 +41,8 @@ public class UserService {
         );
 
         String springBouncyHash = argon2PasswordEncoder.encode(user.getPassword());
+
+        System.out.println("암호화된 비번: " + springBouncyHash);
 
         if (!argon2PasswordEncoder.matches(springBouncyHash, findUser.getPassword())) {
             throw new IllegalArgumentException("유저의 비밀번호가 일치하지 않음");
