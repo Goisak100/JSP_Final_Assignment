@@ -14,4 +14,4 @@ public class PasswordConfig {
     private int parallelism;
     private int memory;
     private int iterations;
-}   
+}
