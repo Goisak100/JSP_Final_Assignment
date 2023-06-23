@@ -40,11 +40,7 @@ public class UserService {
             passwordConfig.getIterations()
         );
 
-        String springBouncyHash = argon2PasswordEncoder.encode(user.getPassword());
-
-        System.out.println("암호화된 비번: " + springBouncyHash);
-
-        if (!argon2PasswordEncoder.matches(springBouncyHash, findUser.getPassword())) {
+        if (!argon2PasswordEncoder.matches(user.getPassword(), findUser.getPassword())) {
             throw new IllegalArgumentException("유저의 비밀번호가 일치하지 않음");
         }
 
