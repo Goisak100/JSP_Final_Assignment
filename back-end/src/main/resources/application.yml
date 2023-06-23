@@ -29,4 +29,4 @@ argon2:
       hashLength: 32
       parallelism: 1
       memory: 60000
-      iterations: 10
+      iterations: 2
