@@ -21,3 +21,13 @@ server:
     key-store-password: Wktks300djr@@
     key-store-type: PKCS12
     key-alias: jspSpring
+
+
+argon2:
+  password:
+    config:
+      saltLength: 16
+      hashLength: 32
+      parallelism: 1
+      memory: 60000
+      iterations: 10

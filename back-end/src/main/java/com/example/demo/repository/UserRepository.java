@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -30,5 +31,15 @@ public class UserRepository {
     public void insertUser(User user) {
         String sql = "insert into users(id, password) values(?, ?)";
         jdbcTemplate.update(sql, new Object[]{user.getId(), user.getPassword()});
+    }
+
+    public boolean isIdExists(String id) {
+        String sql = "select count(*) from users where id = ?";
+        try {
+            int count = jdbcTemplate.queryForObject(sql, Integer.class, id);
+            return count > 0;
+        } catch (EmptyResultDataAccessException ex) {
+            return false;
+        }
     }
 }
