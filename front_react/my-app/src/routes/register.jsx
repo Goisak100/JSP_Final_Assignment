@@ -11,6 +11,7 @@ export default function Register() {
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
+    const [checkId, setCheckId] = useState(false);
 
     const handleChangeId = (event) => {
         setId(event.target.value);
@@ -20,7 +21,33 @@ export default function Register() {
         setPassword(event.target.value);
     }
 
+    const handleIsIdExists =() => {
+        try {
+            const response = axios.post("https://isakgo.com:8443/api/isIdExists", null, {
+                params: {
+                    id: id,
+                }
+            });
+            const result = response.data
+            if (result) {
+                alert("이미 존재하는 아이디입니다.");
+                setCheckId(false);
+            } else {
+                alert("사용 가능한 아이디입니다.");
+                setCheckId(true);
+            }
+        } catch(error) {
+            console.log(error);
+        }
+    }
+
     const handleRegister = async () => {
+
+        if (!checkId) {
+            alert("아이디 중복 검사를 해주세요.");
+            return;
+        }
+        
         const body = {
             id: id,
             password: password,
@@ -62,6 +89,7 @@ export default function Register() {
                         value={id}
                         onChange={handleChangeId}
                     />
+                    <Button onClick={handleIsIdExists}>아이디 중복 확인</Button>
                     <TextField
                         variant="outlined"
                         margin="normal"

@@ -44,10 +44,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error />,
     children: [
-      {
-        path: "/",
-        element: <TestLogin />,
-      },
+      // {
+      //   path: "/",
+      //   element: <TestLogin />,
+      // },
       {
         path: "Products",
         element: <Products />,
