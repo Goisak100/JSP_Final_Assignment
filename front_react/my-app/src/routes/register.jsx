@@ -41,7 +41,8 @@ export default function Register() {
         }
     }
 
-    const handleRegister = async () => {
+    const handleRegister = async (event) => {
+        event.preventDefault();
 
         if (!checkId) {
             alert("아이디 중복 검사를 해주세요.");
