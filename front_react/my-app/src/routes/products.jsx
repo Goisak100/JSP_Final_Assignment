@@ -5,16 +5,17 @@ import { useLoaderData } from "react-router-dom";
 
 export const loader = async () => {
     try {
-        const response = await axios.get("${process.env.REACT_APP_SERVER_HOST}/api/book/getBook");
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_HOST}/api/book/getBook`);
         return response.data;
     } catch (error) {
         console.log(error);
+        return [];
     }
 }
 
 export default function Products() {
 
-    const books = useLoaderData();
+    const books = useLoaderData() || [];
 
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
