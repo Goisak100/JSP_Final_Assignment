@@ -24,7 +24,7 @@ export default function Counter({item_id, currentCount}) {
 
     const sendQuery = async () => {
         try {
-            await axios.post("https://isakgo.com:8443/api/updateQuantityByCount", null, {
+            await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/updateQuantityByCount", null, {
                 params: {
                     item_id: item_id,
                     count: count,

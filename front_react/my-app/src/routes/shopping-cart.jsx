@@ -62,7 +62,7 @@ export default function ShoppingCart() {
     useEffect(() => {
         const fetchData = async() => {
             try {
-                const response = await axios.get("https://isakgo.com:8443/api/findCartDetailById", {
+                const response = await axios.get("${process.env.REACT_APP_SERVER_HOST}/api/findCartDetailById", {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }
@@ -77,7 +77,7 @@ export default function ShoppingCart() {
 
         const fetchTotalPrice = async() => {
             try {
-                const response = await axios.post("https://isakgo.com:8443/api/totalPrice", null, {
+                const response = await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/totalPrice", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }
@@ -91,7 +91,7 @@ export default function ShoppingCart() {
 
         const fetchUserInformationData = async() => {
             try {
-                const response = await axios.post("https://isakgo.com:8443/api/findUserInformationById", null, {
+                const response = await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/findUserInformationById", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }

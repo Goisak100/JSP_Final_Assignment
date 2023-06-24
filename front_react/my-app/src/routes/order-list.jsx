@@ -10,7 +10,7 @@ export default function OrderList() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post("https://isakgo.com:8443/api/getAllOrders", null, {
+                const response = await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/getAllOrders", null, {
                     headers: {
                         Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     }

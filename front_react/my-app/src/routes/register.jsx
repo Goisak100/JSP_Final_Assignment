@@ -23,7 +23,7 @@ export default function Register() {
 
     const handleIsIdExists =() => {
         try {
-            const response = axios.post("https://isakgo.com:8443/api/isIdExists", null, {
+            const response = axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/isIdExists`, null, {
                 params: {
                     id: id,
                 }
@@ -55,7 +55,7 @@ export default function Register() {
         }
 
         try {
-            await axios.post("https://isakgo.com:8443/api/processRegister", body);
+            await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/processRegister`, body);
             window.location.href ="/RootLogin/Login";
             console.log("회원가입이 완려되었습니다.");
         } catch (error) {

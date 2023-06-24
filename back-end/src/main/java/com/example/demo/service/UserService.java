@@ -29,9 +29,6 @@ public class UserService {
             throw new NullPointerException("findUser variable value is null");
         }
 
-        System.out.println("찾은 유저 아이디: " + findUser.getId());
-        System.out.println("찾은 유저 비번: " + findUser.getPassword());
-
         Argon2PasswordEncoder argon2PasswordEncoder = new Argon2PasswordEncoder(
             passwordConfig.getSaltLength(),
             passwordConfig.getHashLength(),

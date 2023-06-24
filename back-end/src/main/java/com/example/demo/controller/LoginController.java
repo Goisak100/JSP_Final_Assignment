@@ -33,9 +33,6 @@ public class LoginController {
     @PostMapping("/processLogin")
     public ResponseEntity<Map<String, String>> processLogin(@RequestBody User user) {
 
-        System.out.println("유저 입력 아이디: " + user.getId());
-        System.out.println("유저 입력 비먼: " + user.getPassword());
-
         boolean isLoginSuccess = userService.isVerifyUser(user);
         if (!isLoginSuccess) {
             Map<String, String> hashMap = new HashMap<>();

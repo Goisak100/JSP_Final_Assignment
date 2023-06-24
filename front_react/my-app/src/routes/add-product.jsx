@@ -63,7 +63,7 @@ export default function AddProduct() {
             formData.append("imageUrl", imageUrl);
             formData.append("introduce", introduce);
     
-            await axios.post("https://isakgo.com:8443/api/book/addBook", formData, {
+            await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/book/addBook", formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     'Content-Type': 'multipart/form-data',

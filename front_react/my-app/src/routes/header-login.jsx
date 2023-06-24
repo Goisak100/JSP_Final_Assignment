@@ -21,14 +21,14 @@ export default function HeaderLogin() {
 
   const handleShowUserInformation = () => {
     handleClose();
-    navigate("/User-information-management"); // 그냥 옮길 경우에는 navigate를 사용한다.
+    navigate("/User-information-management");
   }
 
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("role");
     handleClose();
-    window.location.href = "/"; // UI 새로고침이 필요한 경우에는 window.location.href를 사용한다.
+    window.location.href = "/";
   }
 
   const handleOrderList = () => {

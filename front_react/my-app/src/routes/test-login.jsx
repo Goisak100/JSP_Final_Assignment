@@ -25,7 +25,7 @@ export default function TestLogin() {
         }
 
         try {
-            const response = await axios.post("https://isakgo.com:8443/api/processLogin", body);
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/processLogin`, body);
             const jsonObject = response.data;
             const token = jsonObject.token;
             const role = jsonObject.role;
@@ -41,12 +41,12 @@ export default function TestLogin() {
 
     const handleAdminLogin = async () => {
         const body = {
-            id: 'isakgo',
-            password: '1234'
+            id: 'admin',
+            password: 'Wktks300djr@@'
         }
 
         try {
-            const response = await axios.post("https://isakgo.com:8443/api/processLogin", body);
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/processLogin`, body);
             const jsonObject = response.data;
             const token = jsonObject.token;
             const role = jsonObject.role;

@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 export const loader = async () => {
     try {
-        const response = await axios.get("https://isakgo.com:8443/api/book/getBook");
+        const response = await axios.get("${process.env.REACT_APP_SERVER_HOST}/api/book/getBook");
         return response.data;
     } catch (error) {
         console.log(error);
