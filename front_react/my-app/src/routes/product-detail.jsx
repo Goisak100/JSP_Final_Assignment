@@ -30,7 +30,7 @@ const StyledCardMediaContainer = styled('div')({
 
 export const loader = async ({params}) => {
   try {
-    const response = await axios.get("${process.env.REACT_APP_SERVER_HOST}/api/book/getBookDetail", {
+    const response = await axios.get(`${process.env.REACT_APP_SERVER_HOST}/api/book/getBookDetail`, {
       params: {
         id: params.id
       }
@@ -38,11 +38,12 @@ export const loader = async ({params}) => {
     return response.data;
   } catch (error) {
     console.log(error);
+    return [];
   }
 }
 
 export default function ProductDetail() {
-  const book = useLoaderData();
+  const book = useLoaderData() || [];
   const { id, name, author, translator, publisher, publicationDate, price, imageUrl, introduce } = book;
   const role = sessionStorage.getItem("role");
 
@@ -50,7 +51,7 @@ export default function ProductDetail() {
 
   const handleRemoveBook = async () => {
     try {
-        await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/book/removeBook", null, {
+        await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/book/removeBook`, null, {
           params: {
             book_id: id,
           },
@@ -70,7 +71,6 @@ export default function ProductDetail() {
 
   const handlePutInCart = async () => {
 
-    // 원래는 토큰을 서버로 보내서 유효성을 검사하고, 올바르지 않을 때만 진행해야 한다.
     if (!sessionStorage.getItem("token")) {
       if (window.confirm("카트에 담으려면 로그인을 하셔야 합니다. 로그인 페이지로 이동합니까?")) {
         navigate("/RootLogin/Login");
@@ -80,7 +80,7 @@ export default function ProductDetail() {
     }
 
     try {
-      await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/addBookToCart", null, {
+      await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/addBookToCart`, null, {
         params: {
           book_id: id,
           quantity: 1,

@@ -10,7 +10,7 @@ export default function OrderFulfillment() {
     useEffect(() => {
         const order = async () => {
             try {
-                axios.post("${process.env.REACT_APP_SERVER_HOST}/api/order", null, {
+                axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/order`, null, {
                     params: {
                         address: data.address,
                         addressDetail: data.addressDetail,

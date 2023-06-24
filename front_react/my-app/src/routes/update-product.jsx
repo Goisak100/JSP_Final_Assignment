@@ -67,7 +67,7 @@ export default function UpdateProduct() {
 
     const fetchBookDetailData = async() => {
         try {
-            const response = await axios.get("${process.env.REACT_APP_SERVER_HOST}/api/book/getBookDetail", {
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_HOST}/api/book/getBookDetail`, {
                 params: {
                     id: book_id,
                 }
@@ -117,7 +117,7 @@ export default function UpdateProduct() {
         formData.append("oldImageUrl", oldImageUrl);
 
         try {
-            await axios.post("${process.env.REACT_APP_SERVER_HOST}/api/book/updateBookDetail", formData, {
+            await axios.post(`${process.env.REACT_APP_SERVER_HOST}/api/book/updateBookDetail`, formData, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`,
                     'Content-Type': 'multipart/form-data',
@@ -155,8 +155,4 @@ export default function UpdateProduct() {
             </Box>
         </Container>
     );
-
-
-
-
 }
